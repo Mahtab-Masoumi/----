@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="فروشگاه صنایع دستی فاخر؛ عرضه محصولات دست‌ساز و هنرهای اصیل ایرانی">
+    <title>فروشگاه صنایع دستی فاخر</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- هدر و منوی بالا صفحه-->
+<header class="site-header">
+    <nav class="navbar flex-nowrap py-0">
+        <div class="container-fluid header-container d-flex align-items-center flex-nowrap">
+            <a href="index.html" class="navbar-brand p-0 me-2 flex-shrink-0">
+                <img src="images/logo.png" alt="لوگوی فاخر">
+            </a>
+
+            <div class="header-content d-flex align-items-center flex-grow-1">
+
+                <ul class="navbar-nav main-nav flex-row flex-nowrap mx-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">صفحه اصلی</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">محصولات</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link">وبلاگ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">درباره ما</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">تماس با ما</a>
+                    </li>
+                </ul>
+
+                <div class="header-actions d-flex align-items-center gap-1 gap-md-4 flex-shrink-0">
+                    <a href="index.html" class="icon-link" aria-label="جستجو">
+                        <img src="images/search.png" alt="">
+                    </a>
+
+                    <a href="index.html" class="icon-link" aria-label="حساب کاربری">
+                        <img src="images/account.png" alt="">
+                    </a>
+
+                    <a href="index.html" class="icon-link" aria-label="سبد خرید">
+                        <img src="images/buy.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <article class="single-post">
+            <section class="post-hero">
+                <div class="post-hero-inner">
+                    <nav class="post-breadcrumb" aria-label="مسیر">
+                        <a href="index.html">صفحه اصلی</a>
+                        <span>/</span>
+                        <a href="blog.html">وبلاگ</a>
+                        <span>/</span>
+                        <span id="postCategoryBreadcrumb">مقاله</span>
+                    </nav>
+                    <span class="post-category-badge" id="postCategory">مقاله</span>
+                    <h1 class="post-title" id="postTitle"></h1>
+                    <div class="post-meta-row">
+                        <span id="postDate"></span>
+                        <span class="meta-divider">•</span>
+                        <span id="postReadTime"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="post-body-section" id="postBodySection">
+                <div class="post-layout">
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-12 col-lg-8">
+                            <div class="post-main">
+                                <div class="post-cover" id="postCover">
+                                    <img id="postImage" alt="" loading="lazy">
+                                </div>
+                                <div class="post-body-text">
+                                    <p id="postDescription"></p>
+                                    <h2>تاریخچه و پیشینه</h2>
+                                    <p id="postHistory"></p>
+                                    <h2>ویژگی‌های شاخص</h2>
+                                    <ul class="post-features" id="postFeatures"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <aside class="post-sidebar">
+                                <div class="post-price-box" id="postPriceBox">
+                                    <span class="post-price-label">قیمت محصول</span>
+                                    <strong class="post-price-value" id="postPrice"></strong>
+                                    <a href="index.html" class="post-buy-btn">مشاهده در فروشگاه</a>
+                                </div>
+                                <div class="post-share-box">
+                                    <h3>اشتراک‌گذاری</h3>
+                                    <div class="post-share-links">
+                                        <a href="https://eitaa.com/fakhershopnew/7119" target="_blank" rel="noopener">ایتا</a>
+                                        <a href="https://www.instagram.com/fakhershop/" target="_blank" rel="noopener">اینستاگرام</a>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="post-back-section" id="postBackSection">
+                <a href="blog.html" class="post-back-link">← بازگشت به وبلاگ</a>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer"><p>تمامی حقوق مادی و معنوی این وب‌سایت متعلق به فروشگاه صنایع دستی فاخر می‌باشد. &copy; ۲۰۲۴</p></footer>
+    <script src="java/java.js"></script>
+</body>
+</html>
