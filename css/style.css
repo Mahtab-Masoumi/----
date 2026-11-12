@@ -7,8 +7,6 @@
     --dark: #0b0b0b;
     --header-bg: #080808;
 }
-/* حذف فاصله‌های پیش‌فرض و تنظیم نحوه محاسبه اندازه عناصر */
-
 * {
     margin: 0;
     padding: 0;
@@ -171,7 +169,6 @@ p  { font-size: 13px; line-height: 2; }
 
 
 
-
 /*اسلایدر*/
 
 #carouselExampleIndicators .carousel-item img {
@@ -209,82 +206,96 @@ p  { font-size: 13px; line-height: 2; }
 
 .benefit-item {
     color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(3px, 1vw, 12px);
+    height: 100%;
 }
-
 .benefit-icon {
-    width: 68px;
-    height: 68px;
-    min-width: 68px;
+    width: clamp(34px, 4.5vw, 68px);
+    height: clamp(34px, 4.5vw, 68px);
+    flex: 0 0 clamp(34px, 4.5vw, 68px);
+    box-sizing: border-box;
     border: 1px solid #d4af3760;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .benefit-icon svg {
-    width: 32px;
-    height: 32px;
+    display: block;
+    width: clamp(18px, 2.2vw, 32px);
+    height: clamp(18px, 2.2vw, 32px);
     fill: none;
     stroke: var(--gold);
     stroke-width: 1.8;
     stroke-linecap: round;
     stroke-linejoin: round;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon {
+    border-color: var(--gold-light);
+    background: #d4af3760;
+} 
+
+
+.benefit-item:hover .benefit-icon svg {
+    stroke: var(--gold-light);
 }
 
 .benefit-text h3 {
-    color: var(--gold-light);
-    font-size: 14px;
-    margin-bottom: 8px;
+    color: #FFFDD0;
+    font-size: clamp(7px, 1vw, 14px);
+    margin-bottom: 5px;
 }
 
 .benefit-text p {
     color: #bdb5a5;
-    font-size: 11px;
-    line-height: 1.8;
+    font-size: clamp(5px, 0.8vw, 11px);
+    line-height: 1.6;
     margin-bottom: 0;
 }
 
 
-/* =====================================
-   بخش دسته‌بندی محصولات
-===================================== */
 
+/* بخش دسته بندی محصولات */
 .categories-section {
-    padding: 40px 7% 70px;
     background-color: #10100e;
     direction: rtl;
+    padding: 40px 7% 70px;
 }
 
-.section-title { text-align: center; margin-bottom: 40px; }
-.section-title span { color: #c49a45; font-size: 11px; letter-spacing: 3px; font-family: Arial, sans-serif; }
-.section-title h2 { color: #f5f0e7; font-size: 26px; margin: 12px 0; }
-.section-title p { color: #aaa397; font-size: 14px; }
+.section-title h2 {
+    color: #f5f0e7;
+    font-size: 26px;
+    margin: 12px 0;
+}
 
 .categories-grid {
     max-width: 1450px;
-    margin: auto;
 }
 
 .category-card {
     display: block;
-    padding: 18px;
-    background-color: #f2ecdf;
-    border-radius: 8px;
     text-align: center;
     text-decoration: none;
-    color: #211e18;
-    opacity: 0;
-    transform: translateY(45px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
+    background: #f5f0e5;
+    border: 1px solid #d4af3760;
+    border-radius: 12px;
+    padding: 15px;
+    transition: 0.3s;
 }
 
-.category-card.show { opacity: 1; transform: translateY(0); }
-.category-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(196, 154, 69, 0.12); }
-.category-card.show:hover { transform: translateY(-5px); }
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(196, 154, 69, 0.12);
+}
 
 .category-image {
-    width: 100%;
     height: 190px;
     display: flex;
     align-items: center;
@@ -298,21 +309,22 @@ p  { font-size: 13px; line-height: 2; }
     transition: 0.4s ease;
 }
 
-.category-card:hover img { transform: scale(1.08); }
-.category-card h3 { font-size: 16px; font-weight: 600; margin: 12px 0 0; transition: color 0.3s ease; }
-.category-card:hover h3 { color: #854836; }
+.category-card:hover img {
+    transform: scale(1.08);
+}
 
-
-/* =====================================
-   جداکننده طلایی
-===================================== */
+.category-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 12px 0 0;
+    color: #854836;
+    transition: 0.3s ease;
+}
 
 .gold-divider {
-    width: 100%;
-    margin: 10px auto;
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin: 10px auto;
 }
 
 .gold-divider span {
@@ -329,176 +341,256 @@ p  { font-size: 13px; line-height: 2; }
     left: 50%;
     width: 8px;
     height: 8px;
-    margin-left: -4px;
     background: var(--gold);
-    transform: rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+}
+
+@media (max-width: 576px) {
+    .category-card {
+        padding: 5px;
+    }
+
+    .category-image {
+        height: 75px;
+    }
+
+    .category-card h3 {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .section-title h2 {
+        font-size: 18px;
+    }
+
+    .gold-divider span {
+        width: 140px;
+    }
 }
 
 
-/* =====================================
-   ویترین محصولات فروشگاه
-===================================== */
 
-.products-showcase {
-    width: 100%;
-    max-width: 100%;
-    margin-inline: 0;
-    padding: 0;
-    margin-top: 15px;
-    background: transparent;
-    overflow: clip;
-}
-
-.products-container { width: 100%; max-width: none; margin: 0; padding: 0; }
-
+/* بخش محصولات */
 .product-group {
     width: 100%;
-    padding: 18px 0 15px;
-    margin: 0 0 18px;
+    padding: 5px 0 30px;
+    margin-top: 50px;
     border-top: 1px solid #b99a60;
     border-bottom: 1px solid #b99a60;
-    border-radius: 0;
-    box-sizing: border-box;
+    background: #211f1b;
 }
 
-.product-group:nth-child(odd) { background: #211f1b; }
-.product-group:nth-child(odd) .product-heading h2 { color: #f4eee2; }
-.product-group:nth-child(even) { background: #f4eee2; }
-.product-group:nth-child(even) .product-heading h2 { color: #29251f; }
-
-.product-heading {
-    width: 100%;
-    max-width: none;
-    padding: 0 5%;
-    margin: 0 auto 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.product-heading h2 {
+    color: #f4eee2;
+    font-size: 21px;
+    font-weight: 700;
+    margin:10px;
 }
-
-.product-heading h2 { font-size: 21px; font-weight: 700; margin: 0; }
-.heading-subtitle { display: block; color: #b39459; font-size: 12px; margin-bottom: 6px; }
-.slider-controls { display: flex; align-items: center; gap: 10px; }
-
-.product-arrow {
-    width: 38px;
-    height: 38px;
-    border: 1px solid #b99a60;
-    border-radius: 50%;
-    background: transparent;
-    color: #a8874e;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s ease;
-    text-align: center;
-    padding: 0;
-    line-height: 1;
-    font-family: Arial, sans-serif;
-}
-
-.product-arrow:hover { background: #b99a60; color: #fff; }
-
-.product-slider {
-    position: relative;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.product-track {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    direction: ltr;
-    gap: 16px;
-    padding: 5px 0 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-.product-track::-webkit-scrollbar { display: none; }
 
 .product-card {
-    direction: rtl;
-    flex: 0 0 190px;
+    flex: 1 1 0%;
     min-width: 0;
-    padding: 10px;
-    margin: 0;
+    padding: 8px;
     background: #292722;
     border: 1px solid #a8874e;
     border-radius: 13px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s ease;
 }
 
-.product-group:nth-child(even) .product-card { background: #292722; border-color: #b99a60; }
-.product-card:hover { transform: translateY(-6px); border-color: #c9a65e; box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18); }
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #c9a65e;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
 
 .product-image {
     width: 100%;
-    height: 155px;
+    height: 130px;
     overflow: hidden;
     border-radius: 9px;
     background: #eee8dc;
 }
 
 .product-image img {
-    width: 100%; height: 100%; display: block;
-    object-fit: cover; transition: transform 0.4s ease;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    transition: 0.4s ease;
 }
 
-.product-card:hover .product-image img { transform: scale(1.06); }
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
 
-.product-info { padding: 12px 3px 5px; text-align: right; }
+.product-info {
+    padding: 10px 2px 5px;
+    text-align: right;
+}
+
 .product-info h3 {
-    color: #f4eee2; font-size: 13px; font-weight: 600;
-    margin: 0 0 12px; white-space: nowrap;
-    overflow: hidden; text-overflow: ellipsis;
+    color: #f4eee2;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.product-price { display: block; color: #d7b875; font-size: 12px; font-weight: bold; }
+
+.product-price {
+    display: block;
+    color: #d7b875;
+    font-size: 11px;
+    font-weight: bold;
+}
 
 .product-link {
-    display: block; width: 100%; margin-top: 12px; padding: 8px 5px;
-    background: #c5a66b; border-radius: 7px; color: #29241c;
-    font-size: 12px; text-align: center; text-decoration: none;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 7px 3px;
+    background: #c5a66b;
+    border-radius: 7px;
+    color: #29241c;
+    font-size: 11px;
+    text-align: center;
+    text-decoration: none;
     transition: 0.3s ease;
 }
-.product-link:hover { background: #e2c991; color: #29241c; }
 
-.product-slider .product-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 5;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.product-link:hover {
+    background: #e2c991;
+    color: #29241c;
 }
 
-.product-slider .product-arrow.next { left: 12px; right: auto; text-indent: 0; direction: ltr; }
-.product-slider .product-arrow.prev { right: 12px; left: auto; text-indent: 0; direction: ltr; }
+@media (max-width: 576px) {
+    .product-card {
+        flex: 0 0 100px;
+    }
 
-
-/* =====================================
-   بنرهای تبلیغاتی
-===================================== */
-
-.promo-banners { width: 100%; padding: 45px 5%; }
-.promo-banners-container { max-width: 1450px; margin: 0 auto; }
-.promo-banner { width: 100%; overflow: hidden; border-radius: 13px; background: transparent; }
-.promo-banner img {
-    display: block; width: 100%; height: auto;
-    object-fit: contain; transition: transform 0.4s ease;
+    .product-image {
+        height: 80px;
+    }
 }
-.promo-banner:hover img { transform: scale(1.02); }
+
+
+
+/* بخش پرفروش ترین محصولات */
+.product-group1 {
+    width: 100%;
+    padding: 5px 0 30px;
+    margin: 0px 0;
+    border-top: 1px solid #b99a60;
+    border-bottom: 1px solid #b99a60;
+    background: #f4eee2;
+}
+
+.product-heading1 h2 {
+    color: #29251f;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.product-card1 {
+    flex: 1 1 0%;
+    min-width: 0;
+    padding: 8px;
+    background: #292722;
+    border: 1px solid #a8874e  ;
+    border-radius: 13px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.product-card1:hover {
+    transform: translateY(-5px);
+    border-color: #c9a65e;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+
+.product-image1 {
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    border-radius: 9px;
+    background: #eee8dc;
+}
+
+.product-image1 img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    transition: 0.4s ease;
+}
+
+.product-card1:hover .product-image1 img {
+    transform: scale(1.06);
+}
+
+.product-info1 {
+    padding: 10px 2px 5px;
+    text-align: right;
+}
+
+.product-info1 h3 {
+    color: #f4eee2;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price1 {
+    display: block;
+    color: #d7b875;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.product-link1 {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 7px 3px;
+    background: #c5a66b;
+    border-radius: 7px;
+    color: #29241c;
+    font-size: 11px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.product-link1:hover {
+    background: #e2c991;
+    color: #29241c;
+}
+
+@media (max-width: 576px) {
+    .product-card1 {
+        flex: 0 0 100px;
+    }
+
+    .product-image1 {
+        height: 80px;
+    }
+}
+
+
+/*  بنرهای تبلیغاتی */
+.promo-img {
+    transition: transform 0.4s ease;
+}
+
+.promo-img:hover {
+    transform: scale(1.02);
+}
 
 
 /* =====================================
