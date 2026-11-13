@@ -189,11 +189,11 @@ p  { font-size: 13px; line-height: 2; }
     opacity: 1;
 }
 
-/*@media (max-width: 576px) {
+@media (max-width: 576px) {
     #carouselExampleIndicators .carousel-indicators button {
         width: 14px;
         height: 2px;
-        margin: 0 3px; }}*/
+        margin: 0 3px; }}
 
 
 /* مزیت های فروشگاه */
@@ -343,7 +343,7 @@ p  { font-size: 13px; line-height: 2; }
     transform: translateX(-50%) rotate(45deg);
 }
 
-/*@media (max-width: 576px) {
+@media (max-width: 576px) {
     .category-card {
         padding: 5px;
     }
@@ -364,7 +364,7 @@ p  { font-size: 13px; line-height: 2; }
     .gold-divider span {
         width: 140px;
     }
-}*/
+}
 
 
 
@@ -463,7 +463,7 @@ p  { font-size: 13px; line-height: 2; }
     color: #29241c;
 }
 
-/*@media (max-width: 576px) {
+@media (max-width: 576px) {
     .product-card {
         flex: 0 0 100px;
     }
@@ -471,7 +471,7 @@ p  { font-size: 13px; line-height: 2; }
     .product-image {
         height: 80px;
     }
-}*/
+}
 
 
 
@@ -570,7 +570,7 @@ p  { font-size: 13px; line-height: 2; }
     color: #29241c;
 }
 
-/*@media (max-width: 576px) {
+@media (max-width: 576px) {
     .product-card1 {
         flex: 0 0 100px;
     }
@@ -578,7 +578,7 @@ p  { font-size: 13px; line-height: 2; }
     .product-image1 {
         height: 80px;
     }
-}*/
+}
 
 
 /*  بنرهای تبلیغاتی */
@@ -664,7 +664,7 @@ p  { font-size: 13px; line-height: 2; }
     transform: translateX(-4px);
 }
 
-/*@media (max-width: 576px) {
+@media (max-width: 576px) {
 
     .about-section {
         padding: 30px 15px !important;
@@ -718,7 +718,7 @@ p  { font-size: 13px; line-height: 2; }
     .arrow-left {
         font-size: 14px;
     }
-}*/
+}
 
 /* بخش وبلاگ */
 
@@ -885,7 +885,7 @@ p  { font-size: 13px; line-height: 2; }
     object-fit: cover;
 }
 
-/*@media (max-width: 576px) {
+@media (max-width: 576px) {
     .contact-content {
         border-radius: 14px;
     }
@@ -907,7 +907,7 @@ p  { font-size: 13px; line-height: 2; }
     .contact-image img {
         height: 180px;
     }
-}*/
+}
 
 
 
@@ -1001,7 +1001,7 @@ p  { font-size: 13px; line-height: 2; }
     line-height: 2;
 }
 
-/*
+
 @media (max-width: 576px) {
     .footer-logo {
         width: 115px;
@@ -1018,7 +1018,7 @@ p  { font-size: 13px; line-height: 2; }
     }
 
 }
-*/
+
 
 
 
